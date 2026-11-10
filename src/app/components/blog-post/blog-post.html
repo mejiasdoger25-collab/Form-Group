@@ -1,0 +1,50 @@
+<div class="container mt-4 bg-warning">
+  <form [formGroup]="profileForm">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea class="form-control" id="description" rows="4" formControlName="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Categoría</label>
+      <select class="form-select" id="category" formControlName="category">
+        <option value="" disabled selected>Selecciona una categoría</option>
+        <option value="Tecnología">Tecnología</option>
+        <option value="Diseño">Diseño</option>
+        <option value="Programación">Programación</option>
+        <option value="Novedades">Novedades</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="tags" class="form-label">Etiquetas</label>
+      <input type="text" class="form-control" id="tags" placeholder="Ej: angular, typescript, frontend" formControlName="tag">
+      <div class="form-text">Separa las etiquetas con comas</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email del autor</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div class="form-text">Nunca compartiremos tu email con nadie.</div>
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="publishNow" formControlName="publishNow">
+      <label class="form-check-label" for="publishNow">Publicar ahora</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="publishDate" class="form-label">Fecha de publicación</label>
+      <input type="date" class="form-control" id="publishDate" formControlName="publishDate">
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="sendForm()">Enviar</button>
+
+  </form>
+</div>
